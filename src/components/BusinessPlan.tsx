@@ -15,7 +15,6 @@ const BusinessPlan = () => {
             <div className="business-item-info">
               <h3>Chuẩn SEO, chất lượng, an tâm</h3>
               <p>Bạn muốn có website đẹp, chuyên nghiệp, chuẩn SEO, tăng doanh số? Hãy đến với công ty thiết kế web của chúng tôi. Chúng tôi sẽ tạo cho bạn website phù hợp với thương hiệu, ngành nghề, tối ưu hóa cho di động, hỗ trợ từ A-Z. Giá cả hợp lý, thời gian nhanh chóng, chất lượng đảm bảo.<br/>
-             
                Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết. Chúng tôi cam kết mang đến cho bạn sự hài lòng và tin cậy. Cùng chúng tôi xây dựng website của bạn ngay hôm nay!</p>
             </div>
           </div>

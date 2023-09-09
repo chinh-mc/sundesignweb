@@ -9,7 +9,7 @@ const Header = () => {
     <span />
     <span />
   </div>
-  <nav className="navbar navbar-expand-md bg-inverse fixed-top scrolling-navbar header-top-area">
+  <nav className="navbar navbar-expand-md fixed-top scrolling-navbar header-top-area">
     <div className="container">
       <a href="/" className="navbar-brand">
         {/* <img src="img/logo.png" alt="" /> */}

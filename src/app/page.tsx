@@ -1,29 +1,28 @@
-import Header from '@/components/Header'
-import "@/assets/css/bootstrap.min.css"
-import "@/assets/css/animate.css"
 import "@/assets/css/LineIcons.css"
+import "@/assets/css/animate.css"
+import "@/assets/css/bootstrap.min.css"
+import "@/assets/css/eraweb.css"
+import "@/assets/css/magnific-popup.css"
+import "@/assets/css/main.css"
+import "@/assets/css/nivo-lightbox.css"
 import "@/assets/css/owl.carousel.css"
 import "@/assets/css/owl.theme.css"
-import "@/assets/css/magnific-popup.css"
-import "@/assets/css/nivo-lightbox.css"
-import "@/assets/css/main.css"
 import "@/assets/css/responsive.css"
-import "@/assets/css/eraweb.css"
+import Header from '@/components/Header'
 
 import BusinessPlan from '@/components/BusinessPlan'
-import Service from '@/components/Service'
-import Features from '@/components/Features'
-import ShowCase from '@/components/ShowCase'
-import Pricing from '@/components/Pricing'
-import Testimonial from '@/components/Testimonial'
-import Team from '@/components/Team'
-import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
-import Script from 'next/script'
-import Template from '@/components/Template'
 import ContactNetwork from '@/components/ContactNetwork'
+import Features from '@/components/Features'
+import Footer from '@/components/Footer'
+import Service from '@/components/Service'
+import Template from '@/components/Template'
+import Script from 'next/script'
 
+export const metadata = {
+  title: "SUN DESIGN - Thiết kế web chuẩn SEO",
+  description: "Bạn muốn có website đẹp, chuyên nghiệp, chuẩn SEO, tăng doanh số? Hãy đến với công ty thiết kế web của chúng tôi. Chúng tôi sẽ tạo cho bạn website phù hợp với thương hiệu, ngành nghề, tối ưu hóa cho di động, hỗ trợ từ A-Z. Giá cả hợp lý, thời gian nhanh chóng, chất lượng đảm bảo.Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết. Chúng tôi cam kết mang đến cho bạn sự hài lòng và tin cậy. Cùng chúng tôi xây dựng website của bạn ngay hôm nay!",
+};
 
 export default function Home() {
   return (
