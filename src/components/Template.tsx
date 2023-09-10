@@ -10,9 +10,9 @@ const Template = () => {
         <div className="col-lg-12">
           <div className="section-header text-center">
             <div>
-              <h2 className="section-title">TEMPLATE</h2>
+              <h2 className="section-title">MẪU WEBSITE</h2>
               <div className="desc-text">
-                <p>Chúng tối cung cấp nhiều template để bạn có thể thoải mãi lựa chọn, hoặc thiết kế theo phong cách cá nhân của bạn</p>
+                <p>Chúng tối cung cấp nhiều mẫu website để bạn có thể thoải mãi lựa chọn, hoặc thiết kế theo phong cách cá nhân của bạn</p>
               </div>
             </div>
           </div>

@@ -554,3 +554,51 @@ export const TEMPLATE_CONTENT = [
     theme: "http://mindspark.eraweb.net"
   },
 ]
+
+export const FEATURE_CONTENT = [
+  {
+    title: "Dễ dàng quản lý",
+    content: "Giao diện hệ thống quản lý hiện đại, thân thiện giúp bạn dễ dàng thao tác trên các mô-đun được cá nhân hoá theo từng nhu cầu cụ thể.",
+    image: "/img/advantage/easy.webp"
+  },
+  {
+    title: "Giao diện linh hoạt",
+    content: "Tuỳ ý chỉnh sửa giao diện, bố cục, phông chữ, màu sắc, hình ảnh. Chủ động thêm bớt các section, container, block, addon để trang web tối ưu hơn.",
+    image: "/img/advantage/interface.webp"
+  },
+  {
+    title: "Tối ưu chuyển đổi",
+    content: "Cam kết mang lại nhiều chuyển đổi hơn so với các trang web được thiết kế trên các nền tảng website truyền thống khác.",
+    image: "/img/advantage/optimize.webp"
+  },
+  {
+    title: "Tốc độ tải nhanh",
+    content: "Hệ thống được tối ưu sẵn về hiệu suất trên tất cả thiết bị và màn hình. Sử dụng công nghệ CDN để tăng tốc độ tải trang với người dùng địa phương.",
+    image: "/img/advantage/speed.webp"
+  },
+  {
+    title: "Bảo mật tối đa",
+    content: "Hệ thống có nhiều cấp độ bảo mật, các dữ liệu nhạy cảm được mã hóa, dữ liệu của bạn luôn độc lập và sao lưu an toàn trên cơ sở hạ tầng của AWS.",
+    image: "/img/advantage/security.webp"
+  },
+  {
+    title: "Hosting miễn phí",
+    content: "Tặng phí sử dụng hosting cao cấp từ AWS với cấu hình mạnh, hoạt động ổn định và luôn có khả năng mở rộng. Bạn không cần mua hosting ở nơi khác.",
+    image: "/img/advantage/hostingfree.webp"
+  },
+  {
+    title: "Tối ưu chi phí",
+    content: "Cam kết giá tốt nhất thị trường và minh bạch dựa trên nhu cầu sử dụng thực tế. Không phát sinh phụ phí. Hiệu quả mang lại tương xứng chi phí bỏ ra.",
+    image: "/img/advantage/cost-optimization.webp"
+  },
+  {
+    title: "Sẵn sàng mở rộng và nâng cấp",
+    content: "Hoàn toàn có thể mở rộng và phát triển tính năng theo nhu cầu. Tích hợp API với các nhà phát triển khác đem lại hiệu quả cho khách hàng. Nâng cấp mọi lúc.",
+    image: "/img/advantage/expand-upgrade.webp"
+  },
+  {
+    title: "Hỗ trợ chuyên nghiệp",
+    content: "Hỗ trợ 24/7 bởi đội ngũ chuyên gia nhiều năm kinh nghiệm và đội ngũ chăm sóc khách hàng tận tâm luôn yêu thương khách hàng.",
+    image: "/img/advantage/support.webp"
+  }
+]
