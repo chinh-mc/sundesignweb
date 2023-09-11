@@ -1,12 +1,81 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react'
+"use client";
+
+import FormProvider from '@/components/common/FormProvider';
+import { useMemo } from "react";
+import { Button, Container, Stack, Typography } from '@mui/material';
+
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
+import * as Yup from 'yup';
+import RHFTextField from './common/RHFTextField';
+import { TOAST_SUCCESS } from '@/lib/toastUtils';
+
+
+function getRndInteger(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
 
 const Contact = () => {
+
+  const LoginSchema = Yup.object().shape({
+    fullname: Yup.string().trim()
+      .required("Hạng mục bắt buộc nhập"),
+    email: Yup.string().trim()
+      .required("Hạng mục bắt buộc nhập"),
+    phone: Yup.string().trim().required("Hạng mục bắt buộc nhập"),
+  });
+
+  const defaultValues = useMemo(
+    () => ({
+      id: '',
+      fullname: '',
+      phone: '',
+      email: "",
+      content: '',
+    }),
+    []
+  );
+
+  const methods = useForm({
+    mode: 'onChange',
+    resolver: yupResolver(LoginSchema),
+    defaultValues
+  });
+
+  const {
+    handleSubmit,
+    setFocus,
+    formState: { isSubmitting },
+    reset
+  } = methods;
+
+
+  const onSubmit = async (data: any) => {
+    const { fullname, phone, email, content } = data
+    const res = await fetch("/api/posts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        id: getRndInteger(1000000000, 9999999900),
+        fullname,
+        phone,
+        email,
+        content,
+        status: 0
+      }),
+    });
+    if (res.status == 201) {
+      reset(defaultValues)
+      alert("Cảm ơn quý khách đã liên hệ. Chúng tôi sẽ liên lạc đến quý khách trong thời gian sớm nhất. Quý khách cũng có thể trao đổi trực tiếp qua zalo, messenger để được hỗ trợ nhanh nhất. Trân trọng!")
+    }
+  }
+
   return (
     <section id="contact" className="section">
-      {/* Container Starts */}
       <div className="container">
-        {/* Start Row */}
         <div className="row">
           <div className="col-lg-12">
             <div className="contact-text section-header text-center">
@@ -19,67 +88,79 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        {/* End Row */}
-        {/* Start Row */}
         <div className="row">
-          {/* Start Col */}
           <div className="col-lg-6 col-md-12">
-            <form id="contactForm">
+            <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)} >
               <div className="row">
                 <div className="col-md-12">
                   <div className="form-group">
-                    <input type="text" className="form-control" id="name" name="name" placeholder="Họ và tên" required data-error="Nhập tên của bạn" />
-                    <div className="help-block with-errors" />
+                    <RHFTextField
+                      type="text"
+                      label={"Họ và tên"}
+                      name='fullname'
+                      disabled={isSubmitting}
+                    />
                   </div>
                 </div>
-              
+
                 <div className="col-md-6">
                   <div className="form-group">
-                    <input type="text" className="form-control" id="email" name="email" placeholder="Email" required data-error="Nhập địa chỉ email" />
-                    <div className="help-block with-errors" />
+                    <RHFTextField
+                      type="email"
+                      label={"Email"}
+                      name='email'
+                      disabled={isSubmitting}
+                    />
                   </div>
                 </div>
                 <div className="col-md-6">
                   <div className="form-group">
-                    <input type="text" placeholder="Số điện thoại" id="budget" className="form-control" name="budget" required data-error="Nhập số điện thoại" />
-                    <div className="help-block with-errors" />
+                    <RHFTextField
+                      type="text"
+                      label={"Số điện thoại"}
+                      name='phone'
+                      disabled={isSubmitting}
+                    />
                   </div>
                 </div>
+
                 <div className="col-md-12">
                   <div className="form-group">
-                    <textarea className="form-control" id="message" name="message" placeholder="Viết một chút.." rows={4} data-error="Write your message" required defaultValue={""} />
-                    <div className="help-block with-errors" />
-                  </div>
-                  <div className="submit-button">
-                    <button className="btn btn-common" id="submit" type="submit">Gửi thông tin</button>
-                    <div id="msgSubmit" className="h3 hidden" />
-                    <div className="clearfix" />
+                    <RHFTextField
+                      label={"Ghi chú"}
+                      placeholder='Viết mốt chút ghi chú...'
+                      name='content'
+                      rows={4}
+                      multiline
+                      disabled={isSubmitting}
+                    />
                   </div>
                 </div>
               </div>
-            </form>
+
+
+              <div className="col-md-12">
+                <div className="submit-button">
+                  <Button className="btn btn-common" type="submit">Gửi thông tin</Button>
+                  <div className="clearfix" />
+                </div>
+              </div>
+            </FormProvider>
           </div>
-          {/* End Col */}
-          {/* Start Col */}
-          <div className="col-lg-1">
-          </div>
-          {/* End Col */}
-          {/* Start Col */}
           <div className="col-lg-4 col-md-12">
             <div className="contact-img">
               <img src="img/contact/01.png" className="img-fluid" alt="" />
             </div>
           </div>
-          {/* End Col */}
-          {/* Start Col */}
-          <div className="col-lg-1">
-          </div>
-          {/* End Col */}
         </div>
-        {/* End Row */}
-      </div>
-    </section>
 
+        <div className="col-lg-1">
+        </div>
+
+        <div className="col-lg-1">
+        </div>
+      </div>
+    </section >
   )
 }
 

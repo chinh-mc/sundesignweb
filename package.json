@@ -9,16 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@hookform/resolvers": "^3.3.1",
+    "@iconify/react": "^4.1.1",
+    "@mui/material": "^5.14.8",
+    "@mui/x-data-grid": "^6.13.0",
     "@types/node": "20.5.9",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
-    "@types/scroll-to-element": "^2.0.2",
+    "bcryptjs": "^2.4.3",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
+    "moment": "^2.29.4",
+    "mongoose": "^7.5.0",
     "next": "13.4.19",
+    "next-auth": "^4.23.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "scroll-to-element": "^2.0.3",
-    "typescript": "5.2.2"
+    "react-hook-form": "^7.46.1",
+    "typescript": "5.2.2",
+    "yup": "^1.2.0"
   }
 }

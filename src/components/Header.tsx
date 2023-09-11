@@ -10,8 +10,6 @@ const Header = () => {
     setOpenMenu((prev)=>!prev)
   }
 
- 
-
   return (
     <header id="home" className="hero-area">
   <div className="overlay">
@@ -30,19 +28,19 @@ const Header = () => {
       <div className={`collapse navbar-collapse ${openMenu ? "show menu-bg" : ""}`} id="navbarCollapse">
         <ul className="navbar-nav mr-auto w-100 justify-content-end">
           <li className="nav-item">
-            <a className="nav-link page-scroll" href="#home" >SUN</a>
+            <a className="nav-link page-scroll" href="/#home" >SUN</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link page-scroll" href="#services">Dịch vụ</a>
+            <a className="nav-link page-scroll" href="/#services">Dịch vụ</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link page-scroll" href="#business-plan">Giới thiệu</a>
+            <a className="nav-link page-scroll" href="/#business-plan">Giới thiệu</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link page-scroll" href="#features">Ưu điểm</a>
+            <a className="nav-link page-scroll" href="/#features">Ưu điểm</a>
           </li>
           <li className="nav-item">
-            <a className="nav-link page-scroll" href="#template">Mẫu website</a>
+            <a className="nav-link page-scroll" href="/#template">Mẫu website</a>
           </li>
           {/* <li className="nav-item">
             <a className="nav-link page-scroll" href="#pricing">Pricing</a>
@@ -64,8 +62,8 @@ const Header = () => {
     <div className="row space-100">
       <div className="col-lg-6 col-md-12 col-xs-12">
         <div className="contents">
-          <h2 className="head-title">Mua sự an tâm</h2>
-          <p>Hãy để chúng tôi giúp bạn tạo ra những trang web phù hợp với mục đích sử dụng, chuyên nghiệp và an toàn, để bạn có thể an tâm và tập trung vào việc kinh doanh của mình.</p>
+          <h2 className="head-title">Ghé đến là an tâm</h2>
+          <p>Hãy để chúng tôi giúp quý khách tạo ra những trang web phù hợp với mục đích sử dụng, chuyên nghiệp và an toàn, để quý khách có thể an tâm và tập trung vào việc kinh doanh của mình.</p>
         </div>
       </div>
       <div className="col-lg-6 col-md-12 col-xs-12 p-0">
