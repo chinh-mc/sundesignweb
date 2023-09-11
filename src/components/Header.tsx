@@ -62,7 +62,7 @@ const Header = () => {
     <div className="row space-100">
       <div className="col-lg-6 col-md-12 col-xs-12">
         <div className="contents">
-          <h2 className="head-title">Ghé đến là an tâm</h2>
+          <h2 className="head-title">Đến là an tâm</h2>
           <p>Hãy để chúng tôi giúp quý khách tạo ra những trang web phù hợp với mục đích sử dụng, chuyên nghiệp và an toàn, để quý khách có thể an tâm và tập trung vào việc kinh doanh của mình.</p>
         </div>
       </div>

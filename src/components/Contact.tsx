@@ -15,14 +15,19 @@ function getRndInteger(min: number, max: number) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
+const digitsOnly = (value: string) => /^\d+$/.test(value)
+
 const Contact = () => {
 
   const LoginSchema = Yup.object().shape({
     fullname: Yup.string().trim()
       .required("Hạng mục bắt buộc nhập"),
-    email: Yup.string().trim()
-      .required("Hạng mục bắt buộc nhập"),
-    phone: Yup.string().trim().required("Hạng mục bắt buộc nhập"),
+    email: Yup
+      .string().trim()
+      .email("Định dạng email không hợp lệ")
+      .required("Hạng mục bắt buộc nhập")
+      .max(100, "Tối đa 100 ký tự"),
+    phone: Yup.string().required("Hạng mục bắt buộc nhập").max(11, "Tối đa 11 ký tự").test('Digits only', 'Chỉ nhập số', digitsOnly)
   });
 
   const defaultValues = useMemo(
@@ -140,7 +145,7 @@ const Contact = () => {
 
               <div className="col-md-12">
                 <div className="submit-button">
-                  <Button className="btn btn-common" type="submit">Gửi thông tin</Button>
+                  <Button className="btn btn-common" size="large" type="submit" variant="contained">Gửi thông tin</Button>
                   <div className="clearfix" />
                 </div>
               </div>

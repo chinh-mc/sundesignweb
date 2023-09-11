@@ -41,7 +41,7 @@ const handler = NextAuth({
   pages: {
     error: "/adm/login",
   },
-
+  secret: process.env.KEY_AUTH_SECRET
 });
 
 export { handler as GET, handler as POST };
