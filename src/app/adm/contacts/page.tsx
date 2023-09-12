@@ -2,7 +2,7 @@
 
 import SkeletonColumn from "@/components/skeleton/SkeletonColumn";
 import useResponsive from "@/hooks/useResponsive";
-import { URL_WEBSITE } from "@/lib/config";
+import { STATUS_CONTACT, URL_WEBSITE } from "@/lib/config";
 import { convertUTCDateToLocalDate } from "@/lib/dateUtils";
 import { Typography } from "@mui/material";
 import { Box, Container, Stack, Button } from '@mui/material';
@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/common/Loading";
+import ContactEdit from "@/components/contacts/ContactEdit";
 
 const initColumns: GridColDef[] = [
   { field: 'id', headerName: 'ID' },
@@ -42,9 +43,30 @@ const initColumns: GridColDef[] = [
   {
     field: 'status',
     headerName: 'Trạng thái',
-    width: 200,
-    valueGetter: (params: GridValueGetterParams) =>
-      `${params.row.status == 'NEW_CONTACT' ? "Liên hệ mới": (params.row.status == 'CONTACTED' ? "Đã liên lạc" : "SUCCESS")}`,
+    width: 230,
+    valueGetter: (params: GridValueGetterParams) => {
+      const data = params.row.status;
+      let result = ""
+      switch (data) {
+        case "NEW_CONTACT":
+          result = STATUS_CONTACT.NEW_CONTACT
+          break;
+        case "CONTACTED":
+          result = STATUS_CONTACT.CONTACTED
+          break;
+        case "SUCCESS":
+          result = STATUS_CONTACT.SUCCESS
+          break;
+        case "FAIL":
+          result = STATUS_CONTACT.FAIL
+          break;
+        default:
+          result = STATUS_CONTACT.NEW_CONTACT
+          break;
+      }
+      return result
+    }
+
   },
   {
     field: 'createdAt',
@@ -55,10 +77,14 @@ const initColumns: GridColDef[] = [
   },
 ];
 
+const a = STATUS_CONTACT.NEW_CONTACT
 
 const Contacts = () => {
   const router = useRouter();
   const session = useSession();
+  const [open, setOpen] = useState(false)
+  const [selectedContact, setSelectedContact] = useState(undefined)
+
   const [rows, setRows] = useState([])
   const [columns, setColumns] = useState<GridColDef[]>(initColumns)
   const [sortModel, setSortModel] = useState<GridSortItem[]>([
@@ -68,19 +94,31 @@ const Contacts = () => {
     },
   ]);
 
-  useEffect(() => {
-    async function getData() {
-      const res = await fetch(`${URL_WEBSITE}/api/posts`, {
-      });
+  async function getData() {
+    const res = await fetch('/api/posts', {
+    });
 
-      if (!res.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      setRows(await res.json())
+    if (!res.ok) {
+      throw new Error("Failed to fetch data");
     }
+    setRows(await res.json())
+  }
+
+  useEffect(() => {
     getData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  const handleOpenDialogContact = (data: any) => {
+    const { row } = data
+    setSelectedContact(row)
+    setOpen(true)
+  }
+
+  const handleCloseDialogContact = () => {
+    setOpen(false)
+    setSelectedContact(undefined)
+  }
 
 
   if (session.status === "loading") {
@@ -89,7 +127,7 @@ const Contacts = () => {
 
   if (session.status === "unauthenticated") {
     router?.push("/adm/login");
-    return <Loading />;
+    // return <Loading />;
   }
 
   if (session.status === "authenticated") {
@@ -120,9 +158,16 @@ const Contacts = () => {
             disableRowSelectionOnClick
             sortModel={sortModel}
             onSortModelChange={(model) => setSortModel(model)}
+            onRowClick={handleOpenDialogContact}
           />
 
         </Box>
+        <ContactEdit
+          open={open}
+          contact={selectedContact}
+          onClose={handleCloseDialogContact}
+          onRefeshData={getData}
+        />
       </Container>
 
     )

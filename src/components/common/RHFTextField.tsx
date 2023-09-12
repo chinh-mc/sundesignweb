@@ -11,7 +11,7 @@ interface IRHFTextFieldProps {
   password?: boolean,
   disabled?: boolean,
   required?: boolean,
-  readOnly?: boolean,
+  readOnly?: boolean | undefined,
   onClick?: (event?: any) => void,
   multiline?: boolean
   rows?: number,
@@ -155,6 +155,7 @@ const RHFTextField: FC<IRHFTextFieldProps> = (props) => {
           }}
           inputProps={{
             maxLength: maxLength,
+            
           }}
           // variant={variant}
           onKeyUp={onKeyUp}

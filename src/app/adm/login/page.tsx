@@ -15,7 +15,7 @@ const Login = () => {
   const router = useRouter();
   const session = useSession();
   const LoginSchema = Yup.object().shape({
-    email: Yup.string().trim()
+    email: Yup.string().trim().email("Định dạng email không hợp lệ")
       .required("Vui lòng nhập email"),
     password: Yup.string().trim().required("Vui lòng nhập mật khẩu"),
   });
@@ -44,11 +44,15 @@ const Login = () => {
 
   const onSubmit = async (data: any) => {
     const { email, password } = data
-    console.log(data)
-    signIn("credentials", {
-      email,
-      password,
-    });
+    try {
+       signIn("credentials", {
+        email,
+        password,
+      });
+    
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   if (session.status === "loading") {

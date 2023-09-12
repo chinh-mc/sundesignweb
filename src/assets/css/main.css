@@ -1759,3 +1759,7 @@ button:focus {
   color: #fff !important;
 }
 
+.modal-open {
+  overflow: hidden !important;
+  /* position: fixed !important; */
+}

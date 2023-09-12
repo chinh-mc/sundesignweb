@@ -22,7 +22,7 @@ const contactSchema = new Schema(
     },
     content: {
       type: String,
-      required: true,
+      required: false,
     },
     status: {
       type: String,
