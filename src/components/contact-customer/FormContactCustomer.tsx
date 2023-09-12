@@ -1,15 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-
-import FormProvider from '@/components/common/FormProvider';
+import { Button } from '@mui/material';
 import { useMemo } from "react";
-import { Button, Container, Stack, Typography } from '@mui/material';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
-import RHFTextField from './common/RHFTextField';
-import { useAppContext } from './provider/AppProvider';
+import FormProvider from "../common/FormProvider";
+import RHFTextField from '../common/RHFTextField';
+import { useAppContext } from '../provider/AppProvider';
 
 
 function getRndInteger(min: number, max: number) {
@@ -18,7 +15,10 @@ function getRndInteger(min: number, max: number) {
 
 const digitsOnly = (value: string) => /^\d+$/.test(value)
 
-const Contact = () => {
+interface FormContactCustomerProps {
+  onClose?: () => void
+}
+const FormContactCustomer = ({onClose}: FormContactCustomerProps) => {
   const {setLoading} = useAppContext();
 
   const LoginSchema = Yup.object().shape({
@@ -78,27 +78,11 @@ const Contact = () => {
       setLoading(false)
       reset(defaultValues)
       alert("Cảm ơn quý khách đã liên hệ. Chúng tôi sẽ liên lạc đến quý khách trong thời gian sớm nhất. Quý khách cũng có thể trao đổi trực tiếp qua zalo, messenger để được hỗ trợ nhanh nhất. Trân trọng!")
+      onClose && onClose()
     }
   }
-
   return (
-    <section id="contact" className="section">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="contact-text section-header text-center">
-              <div>
-                <h2 className="section-title">Liên hệ</h2>
-                <div className="desc-text">
-                  <p>Để lại thông tin để chúng tôi liên lạc với bạn, hoặc liên hệ trực tiếp qua zalo, messenger</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col-lg-6 col-md-12">
-            <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)} >
+    <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)} >
               <div className="row">
                 <div className="col-md-12">
                   <div className="form-group">
@@ -136,7 +120,7 @@ const Contact = () => {
                   <div className="form-group">
                     <RHFTextField
                       label={"Ghi chú"}
-                      placeholder='Viết mốt chút ghi chú...'
+                      placeholder='Viết một chút ghi chú...'
                       name='content'
                       rows={4}
                       multiline
@@ -155,22 +139,7 @@ const Contact = () => {
                 </div>
               </div>
             </FormProvider>
-          </div>
-          <div className="col-lg-4 col-md-12">
-            <div className="contact-img">
-              <img src="img/contact/01.png" className="img-fluid" alt="" />
-            </div>
-          </div>
-        </div>
-
-        <div className="col-lg-1">
-        </div>
-
-        <div className="col-lg-1">
-        </div>
-      </div>
-    </section >
   )
 }
 
-export default Contact
+export default FormContactCustomer

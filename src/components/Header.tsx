@@ -1,13 +1,17 @@
 "use client"
-import useResponsive from '@/hooks/useResponsive'
 /* eslint-disable @next/next/no-img-element */
+import useResponsive from '@/hooks/useResponsive'
 import Image from 'next/image'
-import React, { useState, useEffect } from 'react'
+import Link from 'next/link'
+import React, {  useEffect } from 'react'
 
 const Header = () => {
   const isShowNav = useResponsive("between", "", 0, 767)
 
   useEffect(() => {
+    if (window && window.scrollY > 200) {
+      document.getElementsByClassName("header-top-area")[0].classList.add("menu-bg")
+    }
     window.addEventListener("scroll", () => {
       if (window.scrollY > 200) {
         document.getElementsByClassName("header-top-area")[0].classList.add("menu-bg")
@@ -26,10 +30,10 @@ const Header = () => {
       </div>
       <nav className={`navbar navbar-expand-md fixed-top scrolling-navbar header-top-area`}>
         <div className="container">
-          <a href="/" className="navbar-brand">
+          <Link href="/" className="navbar-brand">
             {/* <img src="img/logo.png" alt="" /> */}
             <Image src="/img/logo.png" alt="" width={100} height={58} />
-          </a>
+          </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <i className="lni-menu" />
           </button>

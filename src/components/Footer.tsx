@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import Link from 'next/link';
 
 const Footer = () => {
-  const {push} = useRouter()
+  const { push } = useRouter()
 
   const handleLogin = () => {
     push('/adm/login')
@@ -15,12 +15,14 @@ const Footer = () => {
   return (
     <footer>
       {/* Footer Area Start */}
-      <section id="footer-Content" style={{paddingTop: 20}}>
+      <section id="footer-Content" style={{ paddingTop: 20 }}>
         <div className="container">
           {/* Start Row */}
           <ul className="footer-menu" >
             <li >
-              <Image src="/img/logo.png" alt="" width={100} height={58} />
+              <Link href="/" >
+                <Image src="/img/logo.png" alt="" width={100} height={58} />
+              </Link>
             </li>
             <li >
               <a className="nav-link page-scroll" href="/#home">SUN</a>
@@ -46,13 +48,13 @@ const Footer = () => {
 
         </div>
         {/* Copyright Start  */}
-        <div className="copyright" style={{marginTop: 0, paddingTop: 5, paddingBottom: 5}}>
+        <div className="copyright" style={{ marginTop: 0, paddingTop: 5, paddingBottom: 5 }}>
           <div className="container">
             {/* Star Row */}
             <div className="row">
               <div className="col-md-12">
                 <div className="site-info text-center" >
-                  <p style={{color: 'white'}}>Copyright © <span onClick={handleLogin}>{new Date().getFullYear()}</span> by Sun Design Web</p>
+                  <p style={{ color: 'white' }}>Copyright © <span onClick={handleLogin}>{new Date().getFullYear()}</span> by Sun Design Web</p>
                 </div>
               </div>
               {/* End Col */}

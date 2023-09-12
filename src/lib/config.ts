@@ -5,6 +5,8 @@ export const URL_WEBSITE =
       ? "http://localhost:3000"
       : process.env.URL_WEBSITE;
 
+export const TIMER_DISPLAY_POPUP = process.env.TIMER_DISPLAY_POPUP 
+
 export const STATUS_CONTACT = {
   NEW_CONTACT: 'LIÊN HỆ MỚI',
   CONTACTED: 'ĐÃ LIÊN HỆ',
