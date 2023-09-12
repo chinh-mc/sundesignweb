@@ -54,8 +54,12 @@ h5 {
   font-family: "Poppins", sans-serif;
   font-weight: 400;
   color: #151948;
- 
 }
+
+.section-title {
+  color: #151948 !important;
+}
+
 p, a, h1, h2, h3, h4, h5, h6 {
   user-select: none;
 }

@@ -62,14 +62,14 @@
   /* 
  VIDEO POP-UP
  ========================================================================== */
-  $('.video-popup').magnificPopup({
-      disableOn: 700,
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      removalDelay: 160,
-      preloader: false,
-      fixedContentPos: false,
-  });
+  // $('.video-popup').magnificPopup({
+  //     disableOn: 700,
+  //     type: 'iframe',
+  //     mainClass: 'mfp-fade',
+  //     removalDelay: 160,
+  //     preloader: false,
+  //     fixedContentPos: false,
+  // });
 
   /* 
    Back Top Link
@@ -131,10 +131,10 @@
 
   /* Nivo Lightbox
   ========================================================*/   
-   $('.lightbox').nivoLightbox({
-    effect: 'fadeScale',
-    keyboardNav: true,
-  });
+  //  $('.lightbox').nivoLightbox({
+  //   effect: 'fadeScale',
+  //   keyboardNav: true,
+  // });
 
 }(jQuery));
 

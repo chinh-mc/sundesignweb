@@ -13,12 +13,10 @@ import "@/assets/css/LineIcons.css"
 import "@/assets/css/animate.css"
 import "@/assets/css/bootstrap.min.css"
 import "@/assets/css/eraweb.css"
-import "@/assets/css/magnific-popup.css"
+// import "@/assets/css/magnific-popup.css"
 import "@/assets/css/main.css"
-import "@/assets/css/nivo-lightbox.css"
-// import "@/assets/css/owl.carousel.css"
-// import "@/assets/css/owl.theme.css"
 import "@/assets/css/responsive.css"
+// import "@/assets/css/nivo-lightbox.css"
 import "@/assets/css/loading.scss"
 
 import AppContextProvider from '@/components/provider/AppProvider'
@@ -58,8 +56,8 @@ export default function RootLayout({
               <Script src="/js/jquery.nav.js"></Script>
               <Script src="/js/scrolling-nav.js"></Script>
               <Script src="/js/jquery.easing.min.js"></Script>
-              <Script src="/js/nivo-lightbox.js"></Script>
-              <Script src="/js/jquery.magnific-popup.min.js"></Script>
+              {/* <Script src="/js/nivo-lightbox.js"></Script> */}
+              {/* <Script src="/js/jquery.magnific-popup.min.js"></Script> */}
               <Script src="/js/main.js"></Script>
             </>
           </AppContextProvider>
