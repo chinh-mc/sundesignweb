@@ -77,7 +77,7 @@ export default function ContactEdit({ open, onClose, onRefeshData, contact }: Co
     }
 
     return (
-        <Dialog fullWidth maxWidth="sm" open={open} onClose={handleClose} sx={{zIndex: 999999999}}>
+        <Dialog fullWidth maxWidth="sm" open={open} onClose={handleClose}>
             <DialogTitle>
                 <Stack direction="row" justifyContent={"space-between"} alignItems={"center"}>
                     <Typography sx={{ mb: 0, fontWeight: 600 }}>
