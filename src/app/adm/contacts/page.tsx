@@ -44,7 +44,7 @@ const initColumns: GridColDef[] = [
     headerName: 'Trạng thái',
     width: 200,
     valueGetter: (params: GridValueGetterParams) =>
-      `${params.row.status == 0 ? "Liên hệ mới": (params.row.status == 1 ? "Đã liên lạc" : "Chốt deal")}`,
+      `${params.row.status == 'NEW_CONTACT' ? "Liên hệ mới": (params.row.status == 'CONTACTED' ? "Đã liên lạc" : "SUCCESS")}`,
   },
   {
     field: 'createdAt',

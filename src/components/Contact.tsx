@@ -68,7 +68,7 @@ const Contact = () => {
         phone,
         email,
         content,
-        status: 0
+        status: 'NEW_CONTACT'
       }),
     });
     if (res.status == 201) {
@@ -145,7 +145,8 @@ const Contact = () => {
 
               <div className="col-md-12">
                 <div className="submit-button">
-                  <Button className="btn btn-common" size="large" type="submit" variant="contained">Gửi thông tin</Button>
+                  <Button className="btn btn-common" size="large" type="submit" variant="contained" disabled={isSubmitting}>
+                    Gửi thông tin</Button>
                   <div className="clearfix" />
                 </div>
               </div>

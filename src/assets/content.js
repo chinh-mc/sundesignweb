@@ -94,7 +94,7 @@ export const TEMPLATE_CONTENT = [
   {
     id: randomUUID(),
     name: "Business Consulting",
-    img: " https://img.eraweb.io/http/300x1279/businessconsulting.eraweb.net/20221226133317_29_1672036397.4706.jpeg",
+    img: "https://img.eraweb.io/http/300x1279/businessconsulting.eraweb.net/20221226133317_29_1672036397.4706.jpeg",
     theme: "http://businessconsulting.eraweb.net"
   },
   {
