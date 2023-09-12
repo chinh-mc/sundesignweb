@@ -7,11 +7,12 @@ import { convertUTCDateToLocalDate } from "@/lib/dateUtils";
 import { Typography } from "@mui/material";
 import { Box, Container, Stack, Button } from '@mui/material';
 import { DataGrid, GridColDef, GridValueGetterParams, GridSortItem } from '@mui/x-data-grid';
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Loading from "@/components/common/Loading";
 import ContactEdit from "@/components/contacts/ContactEdit";
+import { useAppContext } from "@/components/provider/AppProvider";
 
 const initColumns: GridColDef[] = [
   { field: 'id', headerName: 'ID' },
@@ -77,16 +78,22 @@ const initColumns: GridColDef[] = [
   },
 ];
 
-const a = STATUS_CONTACT.NEW_CONTACT
 
 const Contacts = () => {
   const router = useRouter();
+
+  const {setLoading} = useAppContext();
+
   const session = useSession();
+
   const [open, setOpen] = useState(false)
+
   const [selectedContact, setSelectedContact] = useState(undefined)
 
   const [rows, setRows] = useState([])
+
   const [columns, setColumns] = useState<GridColDef[]>(initColumns)
+  
   const [sortModel, setSortModel] = useState<GridSortItem[]>([
     {
       field: 'createdAt',
@@ -95,6 +102,7 @@ const Contacts = () => {
   ]);
 
   async function getData() {
+    setLoading && setLoading(true)
     const res = await fetch('/api/posts', {
     });
 
@@ -102,6 +110,7 @@ const Contacts = () => {
       throw new Error("Failed to fetch data");
     }
     setRows(await res.json())
+    setLoading && setLoading(false)
   }
 
   useEffect(() => {

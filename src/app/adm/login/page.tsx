@@ -11,7 +11,10 @@ import * as Yup from 'yup';
 import Loading from '@/components/common/Loading';
 import { Button, Container, Stack, Typography } from '@mui/material';
 import { signIn, useSession } from "next-auth/react";
+import { useAppContext } from '@/components/provider/AppProvider';
 const Login = () => {
+  const { setLoading } = useAppContext();
+
   const router = useRouter();
   const session = useSession();
   const LoginSchema = Yup.object().shape({
@@ -38,20 +41,20 @@ const Login = () => {
   const {
     handleSubmit,
     setFocus,
-    formState: {isSubmitting}
+    formState: { isSubmitting }
   } = methods;
 
 
   const onSubmit = async (data: any) => {
     const { email, password } = data
     try {
-       signIn("credentials", {
+      setLoading(true)
+      await signIn("credentials", {
         email,
         password,
       });
-    
+      setLoading(false)
     } catch (error) {
-      console.log(error)
     }
   };
 
@@ -66,7 +69,9 @@ const Login = () => {
     return (
       <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
         <Container maxWidth="sm" sx={{ paddingBottom: 5, paddingTop: 5 }}>
-          <Typography variant='h5' sx={{ fontWeight: 600 }}>ĐĂNG NHẬP TÀI KHOẢN</Typography>
+          <Typography variant='h5' sx={{ fontWeight: 600, paddingBottom: 2 }}>
+            ĐĂNG NHẬP TÀI KHOẢN
+          </Typography>
           <Stack spacing={3} paddingBottom={2}>
             <RHFTextField
               type="email"

@@ -9,6 +9,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 import RHFTextField from './common/RHFTextField';
+import { useAppContext } from './provider/AppProvider';
 
 
 function getRndInteger(min: number, max: number) {
@@ -18,6 +19,7 @@ function getRndInteger(min: number, max: number) {
 const digitsOnly = (value: string) => /^\d+$/.test(value)
 
 const Contact = () => {
+  const {setLoading} = useAppContext();
 
   const LoginSchema = Yup.object().shape({
     fullname: Yup.string().trim()
@@ -57,6 +59,7 @@ const Contact = () => {
 
   const onSubmit = async (data: any) => {
     const { fullname, phone, email, content } = data
+    setLoading(true)
     const res = await fetch("/api/posts", {
       method: "POST",
       headers: {
@@ -72,6 +75,7 @@ const Contact = () => {
       }),
     });
     if (res.status == 201) {
+      setLoading(false)
       reset(defaultValues)
       alert("Cảm ơn quý khách đã liên hệ. Chúng tôi sẽ liên lạc đến quý khách trong thời gian sớm nhất. Quý khách cũng có thể trao đổi trực tiếp qua zalo, messenger để được hỗ trợ nhanh nhất. Trân trọng!")
     }

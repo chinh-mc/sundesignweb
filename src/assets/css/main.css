@@ -52,11 +52,13 @@ h3,
 h4,
 h5 {
   font-family: "Poppins", sans-serif;
-  font-size: 40px;
   font-weight: 400;
   color: #151948;
+ 
 }
-
+p, a, h1, h2, h3, h4, h5, h6 {
+  user-select: none;
+}
 ul {
   margin: 0;
   padding: 0;
@@ -93,7 +95,7 @@ a:not([href]):not([tabindex]):hover {
    Section Title
    ========================================================================== */
 .section {
-  padding: 130px 0px;
+  padding: 100px 0px;
 }
 
 .form-control:focus {

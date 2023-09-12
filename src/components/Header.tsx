@@ -71,7 +71,7 @@ const Header = () => {
           <div className="col-lg-6 col-md-12 col-xs-12">
             <div className="contents">
               <h2 className="head-title">Đến là an tâm</h2>
-              <p>Hãy để chúng tôi giúp quý khách tạo ra những trang web phù hợp với mục đích sử dụng, chuyên nghiệp và an toàn, để quý khách có thể an tâm và tập trung vào việc kinh doanh của mình.</p>
+              <p>Hãy để chúng tôi giúp bạn tạo ra những trang web phù hợp với mục đích sử dụng, chuyên nghiệp và an toàn, để bạn có thể an tâm và tập trung vào việc kinh doanh của mình.</p>
             </div>
           </div>
           <div className="col-lg-6 col-md-12 col-xs-12 p-0">

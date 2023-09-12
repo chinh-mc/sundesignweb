@@ -9,16 +9,13 @@ export default function SkeletonColumn() {
       sx={{
         display: 'grid',
         gap: 3,
-        gridTemplateColumns: 'repeat(4, 1fr)',
+        gridTemplateColumns: 'repeat(1, 1fr)',
+        paddingBottom: 2
       }}
     >
-      {[...Array(4)].map((_, index) => (
-        <Paper variant="outlined" key={index} sx={{ p: 2.5, width: 310 }}>
-          <Stack spacing={2}>
-            <Skeleton variant="rectangular" sx={{ paddingTop: '75%', }} />
-            <Skeleton variant="rectangular" sx={{ paddingTop: '25%' }} />
-            <Skeleton variant="rectangular" sx={{ paddingTop: '25%' }} />
-          </Stack>
+      {[...Array(3)].map((_, index) => (
+        <Paper variant="outlined" key={index} sx={{ width: 1, height: 30 }}>
+          <Skeleton variant="rectangular" height={30} />
         </Paper>
       ))}
     </Box>

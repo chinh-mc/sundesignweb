@@ -9,6 +9,7 @@ import * as Yup from 'yup';
 import FormProvider from '../common/FormProvider';
 import { STATUS_CONTACT_CONTENT } from '@/assets/content';
 import Iconify from '../common/Iconify';
+import { useAppContext } from '../provider/AppProvider';
 
 
 interface ContactEditProps {
@@ -19,6 +20,8 @@ interface ContactEditProps {
 }
 
 export default function ContactEdit({ open, onClose, onRefeshData, contact }: ContactEditProps) {
+    const {setLoading} = useAppContext();
+
     const ContactSchema = Yup.object().shape({
 
     });
@@ -53,6 +56,7 @@ export default function ContactEdit({ open, onClose, onRefeshData, contact }: Co
     const onSubmit = async (data: any) => {
         const { id, status } = data
         if (contact) {
+            setLoading(true)
             const res = await fetch(
                 `/api/posts/${id}`,
                 {
@@ -66,6 +70,7 @@ export default function ContactEdit({ open, onClose, onRefeshData, contact }: Co
                 onRefeshData && onRefeshData()
                 onClose && onClose()
             } else {
+                setLoading(false)
                 alert("Cập nhật không thành công")
             }
         }
@@ -92,10 +97,10 @@ export default function ContactEdit({ open, onClose, onRefeshData, contact }: Co
             <FormProvider methods={methods} onSubmit={handleSubmit(onSubmit)}>
                 <DialogContent>
                     <Stack spacing={3}>
-
                         <RHFTextField name="id" label='ID' disabled />
                         <RHFTextField name="fullname" label='Họ và tên' disabled />
                         <RHFTextField name="email" label='Email' disabled />
+                        <RHFTextField name="phone" label='Số điện thoại' disabled />
                         <RHFTextField
                             label={"Ghi chú"}
                             name='content'

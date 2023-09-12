@@ -19,6 +19,9 @@ import "@/assets/css/nivo-lightbox.css"
 // import "@/assets/css/owl.carousel.css"
 // import "@/assets/css/owl.theme.css"
 import "@/assets/css/responsive.css"
+import "@/assets/css/loading.scss"
+
+import AppContextProvider from '@/components/provider/AppProvider'
 
 
 export const metadata: Metadata = {
@@ -43,21 +46,23 @@ export default function RootLayout({
       <meta name="og:image" content={`${URL_WEBSITE}/img/logo/png`} />
       <body className={inter.className}>
         <AuthProvider>
-          <Header />
-          {children}
-          <Footer />
-          <>
-            <Script src="/js/jquery-min.js"></Script>
-            {/* <Script src="/js/popper.min.js"></Script> */}
-            <Script src="/js/bootstrap.min.js"></Script>
-            {/* <Script src="/js/owl.carousel.js"></Script> */}
-            <Script src="/js/jquery.nav.js"></Script>
-            <Script src="/js/scrolling-nav.js"></Script>
-            <Script src="/js/jquery.easing.min.js"></Script>
-            <Script src="/js/nivo-lightbox.js"></Script>
-            <Script src="/js/jquery.magnific-popup.min.js"></Script>
-            <Script src="/js/main.js"></Script>
-          </>
+          <AppContextProvider>
+            <Header />
+            {children}
+            <Footer />
+            <>
+              <Script src="/js/jquery-min.js"></Script>
+              {/* <Script src="/js/popper.min.js"></Script> */}
+              <Script src="/js/bootstrap.min.js"></Script>
+              {/* <Script src="/js/owl.carousel.js"></Script> */}
+              <Script src="/js/jquery.nav.js"></Script>
+              <Script src="/js/scrolling-nav.js"></Script>
+              <Script src="/js/jquery.easing.min.js"></Script>
+              <Script src="/js/nivo-lightbox.js"></Script>
+              <Script src="/js/jquery.magnific-popup.min.js"></Script>
+              <Script src="/js/main.js"></Script>
+            </>
+          </AppContextProvider>
         </AuthProvider>
 
       </body>

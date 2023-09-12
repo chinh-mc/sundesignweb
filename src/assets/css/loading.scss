@@ -1,0 +1,172 @@
+
+
+.overlay-sun {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.overlay-sun .loading {
+  opacity: 1;
+  z-index: 1000;
+}
+
+.bounce-loader {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  border: 0 px solid transparent;
+
+  &__loading1 {
+    background-color: #3c9cfd
+    ;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    opacity: 0.6;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation: 2s ease-in-out 1s infinite normal both running anim_bounce;
+    border: 0px solid transparent;
+  }
+
+  &__loading2 {
+    background-color: #3c9cfd;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    opacity: 0.6;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    animation: 2s ease-in-out 0s infinite normal both running anim_bounce;
+    border: 0px solid transparent;
+  }
+}
+
+@keyframes anim_bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.ring-loader {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  border: 0 px solid transparent;
+
+  &__loading1,
+  &__loading2 {
+    width: 60px;
+    height: 60px;
+    border: 6px solid #3c9cfd;
+    opacity: 0.4;
+    border-radius: 100%;
+    perspective: 800px;
+    animation-fill-mode: forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  &__loading1 {
+    animation: anim_ring1 2s 0s infinite linear;
+  }
+
+  &__loading2 {
+    animation: anim_ring2 2s 0s infinite linear;
+  }
+}
+
+@keyframes anim_ring1 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(180deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+@keyframes anim_ring2 {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateX(360deg) rotateY(180deg) rotateZ(360deg);
+  }
+}
+
+.scale-loader {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  border: 0 px solid transparent;
+
+  &__loading1,
+  &__loading2,
+  &__loading3,
+  &__loading4,
+  &__loading5 {
+    background-color: #3c9cfd;
+    height: 35px;
+    width: 4px;
+    margin: 2px;
+    border-radius: 2px;
+    animation-fill-mode: both;
+    display: inline-block;
+  }
+
+  &__loading1 {
+    animation: anim_scale 1s 0.1s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+  }
+
+  &__loading2 {
+    animation: anim_scale 1s 0.2s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+  }
+
+  &__loading3 {
+    animation: anim_scale 1s 0.30000000000000004s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+  }
+
+  &__loading4 {
+    animation: anim_scale 1s 0.4s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+  }
+
+  &__loading5 {
+    animation: anim_scale 1s 0.5s infinite cubic-bezier(0.2, 0.68, 0.18, 1.08);
+  }
+}
+
+@keyframes anim_scale {
+  0% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.4);
+  }
+
+  100% {
+    transform: scaleY(1);
+  }
+}
