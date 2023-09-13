@@ -1,3 +1,27 @@
+.row-background {
+  &--NEW_CONTACT {
+    background: transparent !important;
+  }
+  &--CONTACTED {
+    background: #25ddf5 !important;
+  }
+  &--SUCCESS {
+    background: #3d5afe !important;
+  }
+
+  &--FAIL {
+    background: #f0595d !important;
+  }
+
+}
+.contact-border-color {
+  border: 1px solid #ccc;
+  height: 15px;
+  width: 15px;
+  margin-right: 5px;
+}
+
+// LOADING  ---------------
 
 
 .overlay-sun {
