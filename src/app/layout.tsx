@@ -37,7 +37,7 @@ export default function RootLayout({
       <meta charSet="utf-8" />
       <meta name="keywords" content="Thiết kế web chuẩn seo, sun design web, thietkeweb, thiet ke web, seo, thiết kế  web, sun" />
       <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"></link>
-      <meta name="og:title" content={"Thiết kế web chuẩn SEO - SUN DESIGN"} />
+      <meta name="og:title" content={"SUN DESIGN - Thiết kế web chuẩn SEO"} />
       <meta name="og:type" content="website" />
       <meta name="og:url" content={URL_WEBSITE} />
       <meta name="og:description" content={"Bạn muốn có website đẹp, chuyên nghiệp, chuẩn SEO, tăng doanh số? Hãy đến với công ty thiết kế web của chúng tôi. Chúng tôi sẽ tạo cho bạn website phù hợp với thương hiệu, ngành nghề, tối ưu hóa cho di động, hỗ trợ từ A-Z. Giá cả hợp lý, thời gian nhanh chóng, chất lượng đảm bảo.Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết. Chúng tôi cam kết mang đến cho bạn sự hài lòng và tin cậy. Cùng chúng tôi xây dựng website của bạn ngay hôm nay!"} />
