@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <meta charSet="utf-8" />
-      <meta name="keywords" content="Thiết kế web chuẩn seo, sun design web, thietkeweb, thiet ke web, seo, thiết kế  web, sun" />
+      <meta name="keywords" content="Thiết kế web chuẩn seo, sun design web, thietkeweb, thiet ke web, seo, thiết kế web, sun, sundesignweb, sunweb, sun web, sundesign, sun design, design web, sun thiet ke web, sun thiết kế web" />
       <link rel="icon" href="/favicon.ico" type="image/x-icon" sizes="16x16"></link>
       <meta name="og:title" content={"SUN DESIGN - Thiết kế web chuẩn SEO"} />
       <meta name="og:type" content="website" />
