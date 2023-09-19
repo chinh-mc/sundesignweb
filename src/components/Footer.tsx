@@ -20,7 +20,7 @@ const Footer = () => {
           {/* Start Row */}
           <ul className="footer-menu" >
             <li >
-              <Link href="/" >
+              <Link href="/" aria-label="Home" >
                 <Image src="/img/logo.png" alt="" width={100} height={58} />
               </Link>
             </li>

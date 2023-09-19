@@ -14,7 +14,7 @@ const Template = () => {
               <div>
                 <h2 className="section-title">MẪU WEBSITE</h2>
                 <div className="desc-text">
-                  <p>Chúng tôi cung cấp nhiều mẫu website để bạn có thể thoải mãi lựa chọn, hoặc thiết kế theo phong cách cá nhân của bạn. Giá chỉ từ <b style={{ color: "#007bff" }}>2 triệu đồng</b>, hãy liên hệ trực tiếp qua zalo hoặc messenger để được báo giá và tư vấn nhiều hơn!</p>
+                  <p>Chúng tôi cung cấp nhiều mẫu website để bạn có thể thoải mãi lựa chọn, hoặc thiết kế theo phong cách cá nhân của bạn. Giá chỉ từ <b style={{ color: "#0000ff" }}>2 triệu đồng</b>, hãy liên hệ trực tiếp qua zalo hoặc messenger để được báo giá và tư vấn nhiều hơn!</p>
                 </div>
               </div>
             </div>

@@ -30,7 +30,7 @@ const Header = () => {
       </div>
       <nav className={`navbar navbar-expand-md fixed-top scrolling-navbar header-top-area`}>
         <div className="container">
-          <Link href="/" className="navbar-brand">
+          <Link href="/" className="navbar-brand" aria-label="Home">
             {/* <img src="img/logo.png" alt="" /> */}
             <Image src="/img/logo.png" alt="" width={100} height={58} />
           </Link>

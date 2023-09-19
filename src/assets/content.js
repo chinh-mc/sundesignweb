@@ -224,12 +224,6 @@ export const TEMPLATE_CONTENT = [
     theme: "http://inbio.eraweb.net",
   },
   {
-    id: "theme_61",
-    name: "Juici",
-    img: "https://img.eraweb.io/http/300x904/juici.eraweb.net/20230330150835_3692_1680163715.7018.webp",
-    theme: "http://juici.eraweb.net",
-  },
-  {
     id: "theme_38",
     name: "Watch Store",
     img: "https://img.eraweb.io/http/300x903/watchstore.eraweb.net/20230401091309_4856_1680315189.5135.webp",
@@ -552,6 +546,12 @@ export const TEMPLATE_CONTENT = [
     name: "Mindspark",
     img: "https://img.eraweb.io/http/300x600/mindspark.eraweb.net/20230905152756_7_1693902476.6764.webp",
     theme: "http://mindspark.eraweb.net",
+  },
+  {
+    id: "theme_92",
+    name: "Juici",
+    img: "https://img.eraweb.io/http/300x904/juici.eraweb.net/20230330150835_3692_1680163715.7018.webp",
+    theme: "http://juici.eraweb.net",
   },
 ];
 
