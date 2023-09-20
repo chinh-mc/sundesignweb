@@ -24,7 +24,7 @@ import AppContextProvider from '@/components/provider/AppProvider'
 
 export const metadata: Metadata = {
   title: "SUN DESIGN - Thiết kế web chuẩn SEO",
-  description: "Bạn muốn có website đẹp, chuyên nghiệp, chuẩn SEO, tăng doanh số? Hãy đến với công ty thiết kế web của chúng tôi. Chúng tôi sẽ tạo cho bạn website phù hợp với thương hiệu, ngành nghề, tối ưu hóa cho di động, hỗ trợ từ A-Z. Giá cả hợp lý, thời gian nhanh chóng, chất lượng đảm bảo.Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết. Chúng tôi cam kết mang đến cho bạn sự hài lòng và tin cậy. Cùng chúng tôi xây dựng website của bạn ngay hôm nay!",
+  description: "Bạn muốn có website đẹp, chuyên nghiệp, chuẩn SEO, tăng doanh số? Hãy đến với dịch vụ thiết kế web của chúng tôi. Chúng tôi sẽ tạo cho bạn website phù hợp với thương hiệu, ngành nghề, tối ưu hóa cho di động, hỗ trợ từ A-Z. Giá cả hợp lý, thời gian nhanh chóng, chất lượng đảm bảo.Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết. Chúng tôi cam kết mang đến cho bạn sự hài lòng và tin cậy. Cùng chúng tôi xây dựng website của bạn ngay hôm nay!",
 };
 
 export default function RootLayout({
@@ -40,7 +40,7 @@ export default function RootLayout({
       <meta name="og:title" content={"SUN DESIGN - Thiết kế web chuẩn SEO"} />
       <meta name="og:type" content="website" />
       <meta name="og:url" content={URL_WEBSITE} />
-      <meta name="og:description" content={"Bạn muốn có website đẹp, chuyên nghiệp, chuẩn SEO, tăng doanh số? Hãy đến với công ty thiết kế web của chúng tôi. Chúng tôi sẽ tạo cho bạn website phù hợp với thương hiệu, ngành nghề, tối ưu hóa cho di động, hỗ trợ từ A-Z. Giá cả hợp lý, thời gian nhanh chóng, chất lượng đảm bảo.Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết. Chúng tôi cam kết mang đến cho bạn sự hài lòng và tin cậy. Cùng chúng tôi xây dựng website của bạn ngay hôm nay!"} />
+      <meta name="og:description" content={"Bạn muốn có website đẹp, chuyên nghiệp, chuẩn SEO, tăng doanh số? Hãy đến với dịch vụ thiết kế web của chúng tôi. Chúng tôi sẽ tạo cho bạn website phù hợp với thương hiệu, ngành nghề, tối ưu hóa cho di động, hỗ trợ từ A-Z. Giá cả hợp lý, thời gian nhanh chóng, chất lượng đảm bảo.Liên hệ ngay để được tư vấn miễn phí và nhận báo giá chi tiết. Chúng tôi cam kết mang đến cho bạn sự hài lòng và tin cậy. Cùng chúng tôi xây dựng website của bạn ngay hôm nay!"} />
       <meta name="og:image" content={`${URL_WEBSITE}/img/logo_seo.png`} />
       <body className={inter.className}>
         <AuthProvider>
