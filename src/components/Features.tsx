@@ -28,7 +28,7 @@ const Features = () => {
                           <Image src={item.image} alt="" width={100} height={100} />
                         </div>
                         <div className="feature-info float-left">
-                          <h4>{item.title}</h4>
+                          <h5 style={{fontWeight: 600}}>{item.title}</h5>
                           <p>{item.content}</p>
                         </div>
                       </div>
@@ -43,7 +43,7 @@ const Features = () => {
                       <Image src={item.image} alt="" width={100} height={100} />
                     </div>
                     <div className="feature-info float-left">
-                      <h4>{item.title}</h4>
+                      <h5 style={{fontWeight: 600}}>{item.title}</h5>
                       <p>{item.content}</p>
                     </div>
                   </div>
